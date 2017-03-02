@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		#box{
+			width: 210px;
+				height: 210px;
+				margin: 50px auto;
+				position: relative;
+		}
+			#box1{
+				width: 200px;
+				height: 200px;
+				border:5px solid green;
+				opacity: 0.5;
+				border-radius: 50%;
+				transform: scale(1);
+				position: absolute;
+				/*transition:0.5s;*/
+			}
+			#box2{
+				width: 100px;
+				height: 100px;
+				border: 5px solid greenyellow;
+				position: absolute;
+				left: 48px;
+				top: 48px;
+				border-radius: 50%;
+				background: green;
+				transform: scale(0.2);
+				/*transition:0.5s;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box1"></div>
+			<div id="box2"></div>
+		</div>
+		
+		<script type="text/javascript">
+		var box1=document.getElementById('box1');
+		var box2=document.getElementById('box2');
+			setInterval(function(){
+				box2.style.transform='scale(1.2)';
+				box2.style.opacity=0.5;
+				box2.style.transition='0.8s';
+				setTimeout(function(){
+					box1.style.transition='0.3s';
+					box1.style.transform='scale(1.5)';
+					box1.style.opacity=0;
+				},500)
+				
+				setTimeout(function(){
+					box2.style.transform='scale(0.2)';
+					box.style.opacity=1;
+					box1.style.transform='scale(1)';
+					box1.style.opacity=0.5;
+				},1000)
+			},2000)
+		</script>
+	</body>
+</html>
